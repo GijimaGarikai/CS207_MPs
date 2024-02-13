@@ -1,3 +1,9 @@
+/**
+ * A text block centered in a given width.
+ *
+ * @author Samuel A. Rebelsky
+ * @author Garikai | Alexander
+ */
 public class Centered implements TextBlock {
   // +--------+------------------------------------------------------------
   // | Fields |

@@ -1,15 +1,13 @@
-//package csc207.testing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-//import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests of the sample methods.
+ * Tests of the all TextBlock types.
  * 
  * @author Samuel A. Rebelsky
- * @author Your Name Here
+ * @author Garikai | Alexander
  */
 public class TBTests {
   /**
@@ -21,17 +19,6 @@ public class TBTests {
   TextBlock t1 = new TextLine("Hello World");
   TextBlock t2 = new TextLine("Hello World");
   TextBlock t3 = new TextLine("");
-
-  // TextBlock bb = new BoxedBlock(t1);
-  // TextBlock c = new Centered(bb, 10);
-  // TextBlock hc = new HComposition(c, t1);
-  // TextBlock hf = new HorizontallyFlipped(hc);
-  // TextBlock rj = new RightJustified(hf, 20);
-  // TextBlock tr = new Truncated(rj, 3);
-  // TextBlock u = new Underlined(tr);
-  // TextBlock vc = new VComposition(u, t1);
-  // TextBlock vf = new  // TextBlock bb2 = new BoxedBlock(vf); VerticallyFlipped(vc);
-
 
   TextBlock block = new TextLine("Hello");
   TextBlock block2 = new TextLine("Hello");
@@ -76,7 +63,20 @@ public class TBTests {
   }
 
 
+/*
+   * Tests the equal method of TBUtils
+   */
+  //Case where the two blocks are the same block
+  @Test
+  void eqTest1() throws Exception {
+    assertEquals(true, TBUtils.eq(block, block));
+  }
 
+  //Case where the two blocks were built the same (but aren't the same)
+  @Test
+  void eqTest2() throws Exception {
+    assertEquals(false, TBUtils.eq(block, block2));
+  }
 
 
   /*
@@ -115,22 +115,60 @@ public class TBTests {
     assertEquals(false, TBUtils.equal(v, h));
   }
 
-
-
-  /*
-   * Tests the equal method of TBUtils
-   */
-  //Case where the two blocks are the same block
+  //Test BoxedBlock
   @Test
-  void eqTest1() throws Exception {
-    assertEquals(true, TBUtils.eq(block, block));
+  void boxTest() throws Exception {
+    assertEquals(false, TBUtils.equal(new BoxedBlock(block), h));
   }
 
-  //Case where the two blocks were built the same (but aren't the same)
+  //Test centered Block
   @Test
-  void eqTest2() throws Exception {
-    assertEquals(false, TBUtils.eq(block, block2));
+  void centTest() throws Exception {
+    assertEquals(false, TBUtils.equal(new Centered(block, 20), h));
   }
+
+  //Test Hcomposed Block
+  @Test
+  void hCompTest() throws Exception {
+    assertEquals(true, TBUtils.equal(new HComposition(block, empty), block));
+  }
+
+  //Test VComposed
+  @Test
+  void VComposedTest() throws Exception {
+    assertEquals(false, TBUtils.equal(new VComposition(block2, block), block));
+  }
+
+  //Test RightJustified
+  @Test
+  void rightJustifiedTets() throws Exception {
+    assertEquals(false, TBUtils.equal(new RightJustified(block, 25), h));
+  }
+
+  //Test HFlipped Block
+  @Test
+  void hFlippedTest() throws Exception {
+    assertEquals(true, TBUtils.equal(new HorizontallyFlipped(block), testH));
+  }
+
+  //Test Truncated Block
+  @Test
+  void TruncatedTest() throws Exception {
+    assertEquals(false, TBUtils.equal(new Truncated(block, 2), testH));
+  }
+
+  //Test Underlined Block
+  @Test
+  void underlinedTest() throws Exception {
+    assertEquals(true, TBUtils.equal(new Underlined(block), new Underlined(testtestH)));
+  }
+
+  //Test VFlipped Block
+  @Test
+  void vFlippedTest() throws Exception {
+    assertEquals(true, TBUtils.equal(new VerticallyFlipped(block), block2));
+  }
+
 
 
 } // class TestSampleMethods

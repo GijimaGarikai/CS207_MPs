@@ -1,3 +1,9 @@
+/**
+ * Creates a textblock right justified within a given width
+ * 
+ * @author Samuel A. Rebelsky
+ * @author Garikai | Alexander
+ */
 public class RightJustified implements TextBlock {
   // +--------+------------------------------------------------------------
   // | Fields |

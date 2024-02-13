@@ -1,3 +1,9 @@
+/**
+ * Textblock shortened to a given width
+ * 
+ * @author Samuel A. Rebelsky
+ * @author Garikai | Alexander
+ */
 public class Truncated implements TextBlock {
   // +--------+------------------------------------------------------------
   // | Fields |

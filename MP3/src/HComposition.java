@@ -2,6 +2,7 @@
  * The horizontal composition of two text blocks.
  * 
  * @author Samuel A. Rebelsky
+ * @author Garikai | Alexander
  */
 public class HComposition implements TextBlock {
   // +--------+------------------------------------------------------------

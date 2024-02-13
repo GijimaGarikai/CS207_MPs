@@ -1,3 +1,9 @@
+/**
+ * The horizontal flip of a text block.
+ * 
+ * @author Samuel A. Rebelsky
+ * @author Garikai | Alexander
+ */
 public class HorizontallyFlipped implements TextBlock {
   // +--------+------------------------------------------------------------
   // | Fields |

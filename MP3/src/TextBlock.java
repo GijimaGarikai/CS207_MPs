@@ -1,7 +1,8 @@
 /**
- * Simple blocks of text for a lab on polymorphism
+ * Simple blocks of text
  * 
  * @author Samuel A. Rebelsky
+ * @author Garikai | Alexander
  */
 public interface TextBlock {
   // +---------+-----------------------------------------------------------

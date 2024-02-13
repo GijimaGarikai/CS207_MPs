@@ -1,3 +1,9 @@
+/**
+ * Underlines a given textblock
+ * 
+ * @author Samuel A. Rebelsky
+ * @author Garikai | Alexander
+ */
 public class Underlined implements TextBlock {
   // +--------+------------------------------------------------------------
   // | Fields |

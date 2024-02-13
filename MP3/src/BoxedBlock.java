@@ -2,6 +2,7 @@
  * A text block surrounded by a box.
  *
  * @author Samuel A. Rebelsky
+ * @author Garikai | Alexander
  */
 public class BoxedBlock implements TextBlock {
   // +--------+------------------------------------------------------------

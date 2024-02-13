@@ -4,7 +4,7 @@ import java.io.PrintWriter;
  * Utilities for TextBlocks.
  * 
  * @author Samuel A. Rebelsky
- * @author Your Name Here
+ * @author Garikai, Alexander
  */
 public class TBUtils {
   // +--------------+------------------------------------------------------
@@ -66,7 +66,7 @@ public class TBUtils {
     // Extract an appropriate length substring
     return lotsOfSpaces.substring(0, len);
   } // spaces(int)
-
+  // tests whether a textblock looks the same
   public static boolean equal(TextBlock t1, TextBlock t2) throws Exception {
     int height, width;
     height = t1.height();
@@ -83,11 +83,11 @@ public class TBUtils {
     }
     return true;
   }
-
+  // tests whether a textblock was built with the same building blocks and input
   public static boolean eqv(TextBlock t1, TextBlock t2) throws Exception {
     return t1.eqv(t2);
   }
-
+  // tetst whether a textblock is stored in the same place in memory
   public static boolean eq(TextBlock t1, TextBlock t2) throws Exception {
     return t1.toString().equals(t2.toString());
   }

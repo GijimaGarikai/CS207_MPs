@@ -1,3 +1,9 @@
+/**
+ * The vertical flip of a textblock.
+ * 
+ * @author Samuel A. Rebelsky
+ * @author Garikai | Alexander
+ */
 public class VerticallyFlipped implements TextBlock {
   // +--------+------------------------------------------------------------
   // | Fields |
