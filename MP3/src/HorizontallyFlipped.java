@@ -45,10 +45,13 @@ public class HorizontallyFlipped implements TextBlock {
   }
 
   /**
-  * Return the contents of the text block.
-  */
-  public TextBlock getContents() {
-    return this.contents;
-  }
+   * Determine if we are structurally equivalent to another block.
+   */
+  public boolean eqv(TextBlock other) throws Exception {
+    return TBUtils.equal(this, other) && 
+           (other instanceof HorizontallyFlipped) &&
+           (this.contents.eqv(((HorizontallyFlipped) other).contents));
+  } // eqv(TextBlock)
+
 
 }

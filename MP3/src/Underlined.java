@@ -50,10 +50,12 @@ public class Underlined implements TextBlock {
   }
 
   /**
-  * Return the contents of the text block.
-  */
-  public TextBlock getContents() {
-    return this.contents;
-  }
+   * Determine if we are structurally equivalent to another block.
+   */
+  public boolean eqv(TextBlock other) throws Exception {
+    return TBUtils.equal(this, other) && 
+           (other instanceof Underlined) &&
+           (this.contents.eqv(((Underlined) other).contents));
+  } // eqv(TextBlock)
 
 }

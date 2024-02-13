@@ -21,13 +21,15 @@ public class TBExpt {
     HorizontallyFlipped testH = new HorizontallyFlipped(block);
     HorizontallyFlipped testtestH = new HorizontallyFlipped(testH);
     HorizontallyFlipped testH2 = new HorizontallyFlipped(block2);
-    pen.println(TBUtils.eq(testH, testH2));
-    pen.println(TBUtils.eq(testH, testH));
+    BoxedBlock boxedLine = new BoxedBlock(block);
+    pen.println(TBUtils.eqv(testH, testH2));
+    pen.println(TBUtils.eqv(block, boxedLine));
+    pen.println(TBUtils.eqv(block, testtestH));
+
     // // Print out the block
     // TBUtils.print(pen, block);
 
-    BoxedBlock boxedLine = new BoxedBlock(block);
-    TBUtils.print(pen, boxedLine.getContents());
+//    TBUtils.print(pen, boxedLine.getContents());
 
     // BoxedBlock boxedBoxedLine = new BoxedBlock(boxedLine);
     // TBUtils.print(pen, boxedBoxedLine);

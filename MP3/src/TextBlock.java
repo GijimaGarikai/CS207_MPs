@@ -27,8 +27,7 @@ public interface TextBlock {
   public int width();
 
   /**
-   * Return the contents of the text block.
+   * Determine if we are structurally equivalent to another block.
    */
-  public TextBlock getContents();
-
+  public boolean eqv(TextBlock other) throws Exception; 
 } // interface TextBlock

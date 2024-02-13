@@ -84,10 +84,13 @@ public class HComposition implements TextBlock {
   } // width()
 
   /**
-  * Return the contents of the text block.
-  */
-  public TextBlock getContents() {
-    return this.contents;
-  }
+   * Determine if we are structurally equivalent to another block.
+   */
+  public boolean eqv(TextBlock other) throws Exception {
+    return TBUtils.equal(this, other) && 
+           (other instanceof HComposition) &&
+           (this.right.eqv((HComposition) other).right) && 
+           (this.left.eqv((HComposition) other).left);
+  } // eqv(TextBlock)
 
 } // class HComposition

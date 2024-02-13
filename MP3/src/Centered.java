@@ -57,10 +57,11 @@ public class Centered implements TextBlock {
   }
 
   /**
-  * Return the contents of the text block.
-  */
-  public TextBlock getContents() {
-    return this.contents;
-  }
-
+   * Determine if we are structurally equivalent to another block.
+   */
+  public boolean eqv(TextBlock other) throws Exception {
+    return TBUtils.equal(this, other) && 
+           (other instanceof Centered) &&
+           (this.contents.eqv(((Centered) other).contents));
+  } // eqv(TextBlock)
 }

@@ -64,11 +64,13 @@ public class BoxedBlock implements TextBlock {
     return 2 + this.contents.width();
   } // width()
 
-  /**
-  * Return the contents of the text block.
-  */
-  public TextBlock getContents() {
-    return this.contents;
-  }
 
+  /**
+   * Determine if we are structurally equivalent to another block.
+   */
+  public boolean eqv(TextBlock other) throws Exception {
+    return TBUtils.equal(this, other) && 
+           (other instanceof BoxedBlock) &&
+           (this.contents.eqv(((BoxedBlock) other).contents));
+  } // eqv(TextBlock)
 } // class BoxedBlock

@@ -85,17 +85,7 @@ public class TBUtils {
   }
 
   public static boolean eqv(TextBlock t1, TextBlock t2) throws Exception {
-    TextBlock contents1 = t1.getContents();
-    TextBlock contents2 = t2.getContents();
-    if (contents1 == null) {
-      return contents2 == null;
-    }
-    else if (contents2 == null) {
-      return false;
-    }
-    else {
-      return equal(t1, t2) && eqv(contents1, contents2);
-    }
+    return t1.eqv(t2);
   }
 
   public static boolean eq(TextBlock t1, TextBlock t2) throws Exception {

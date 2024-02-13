@@ -56,10 +56,11 @@ public class TextLine implements TextBlock {
   } // width()
 
   /**
-  * Return the contents of the text block.
-  */
-  public TextBlock getContents() {
-    return null;
-  }
+   * Determine if we are structurally equivalent to another block.
+   */
+  public boolean eqv(TextBlock other) throws Exception {
+    return (other instanceof TextLine) &&
+           (this.line.equals(((TextLine) other).line));
+  } // eqv(TextBlock)
 
 } // class TextLine
