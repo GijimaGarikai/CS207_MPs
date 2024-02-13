@@ -89,8 +89,8 @@ public class HComposition implements TextBlock {
   public boolean eqv(TextBlock other) throws Exception {
     return TBUtils.equal(this, other) && 
            (other instanceof HComposition) &&
-           (this.right.eqv((HComposition) other).right) && 
-           (this.left.eqv((HComposition) other).left);
+           (this.right.eqv(((HComposition) other).right)) && 
+           (this.left.eqv(((HComposition) other).left));
   } // eqv(TextBlock)
 
 } // class HComposition

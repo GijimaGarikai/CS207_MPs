@@ -90,8 +90,8 @@ public class VComposition implements TextBlock {
   public boolean eqv(TextBlock other) throws Exception {
     return TBUtils.equal(this, other) && 
            (other instanceof VComposition) &&
-           (this.top.eqv((VComposition) other).top) && 
-           (this.bottom.eqv((VComposition) other).bottom);
+           (this.top.eqv(((VComposition) other).top)) && 
+           (this.bottom.eqv(((VComposition) other).bottom));
   } // eqv(TextBlock)
 
 } // class VComposition

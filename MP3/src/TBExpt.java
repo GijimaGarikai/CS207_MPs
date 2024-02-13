@@ -43,7 +43,7 @@ public class TBExpt {
     // BoxedBlock vBoxedLines = new BoxedBlock(v1);
     //TBUtils.print(pen, v1);
 
-    Underlined cent = new Underlined(block);
+    //Underlined cent = new Underlined(block);
 
     //VerticallyFlipped hrz = new VerticallyFlipped(v1);
     // Clean up after ourselves.
